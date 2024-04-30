@@ -25,13 +25,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA 의존성 추가
-<<<<<<< HEAD
     implementation 'mysql:mysql-connector-java:8.0.33' // MySQL 커넥터 추가
-
-=======
     implementation 'mysql:mysql-connector-java' // MySQL 커넥터 추가
-    implementation 'mysql:mysql-connector-java:8.0.28'
->>>>>>> cc8a8f954ca4954354f4d5e3c923c56990201840
+
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter'
