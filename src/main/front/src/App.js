@@ -1,6 +1,7 @@
 import './App.css'; // CSS 스타일 임포트
 import React, { useState } from 'react';
 import axios from 'axios';
+import QR from './QR'; // QR.js 파일을 import
 
 function App() {
     const [responses, setResponses] = useState([]);
@@ -49,6 +50,9 @@ function App() {
                     <li key={index}>{response.content}</li>
                 ))}
             </ul>
+            {/* QR 코드 컴포넌트 추가 */}
+            <h2>QR 코드</h2>
+            <QR />
         </div>
     );
 }
