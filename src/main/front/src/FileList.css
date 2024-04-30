@@ -1,0 +1,34 @@
+.file-list-section {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.file-list-section h2 {
+  color: #17a2b8;
+}
+
+.file-list-section ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.file-list-section li {
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.file-list-section li:last-child {
+  border-bottom: none;
+}
+
+.file-list-section li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.file-list-section li a:hover {
+  text-decoration: underline;
+}

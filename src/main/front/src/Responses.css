@@ -1,0 +1,25 @@
+.responses-section {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.responses-section h2 {
+    color: #004085;
+}
+
+.responses-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.responses-section li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.responses-section li:last-child {
+    border-bottom: none;
+}
