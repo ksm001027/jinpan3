@@ -5,7 +5,7 @@ import QRCode from 'qrcode.react';
 
 function QR() {
     // 변경된 URL 가져오기
-    const currentUrl = "https://localhost:8080";
+    const currentUrl = "https://localhost:3000";
 
     return (
         <div>
