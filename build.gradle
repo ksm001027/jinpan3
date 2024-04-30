@@ -26,6 +26,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA 의존성 추가
     implementation 'mysql:mysql-connector-java:8.0.33' // MySQL 커넥터 추가
+    implementation 'mysql:mysql-connector-java' // MySQL 커넥터 추가
+
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'

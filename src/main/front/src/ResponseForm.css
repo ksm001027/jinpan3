@@ -1,0 +1,27 @@
+.response-form {
+    margin-top: 20px;
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.response-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.response-form button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 0.25rem;
+    margin-top: 10px;
+}
+
+.response-form button:hover {
+    background-color: #0056b3;
+}

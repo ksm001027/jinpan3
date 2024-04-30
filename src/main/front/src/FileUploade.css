@@ -1,0 +1,23 @@
+.file-upload-section {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px dashed #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.file-upload-section input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+}
+
+.file-upload-section button {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.file-upload-section button:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
