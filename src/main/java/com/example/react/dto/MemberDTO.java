@@ -1,5 +1,6 @@
 package com.example.react.dto;
 
+
 import com.example.react.entity.MemberEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

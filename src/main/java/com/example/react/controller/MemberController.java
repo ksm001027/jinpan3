@@ -1,5 +1,6 @@
 package com.example.react.controller;
 
+import com.example.react.dto.MemberDTO;
 import com.example.react.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -8,10 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@RequiredArgsConstructor //MemberService에 대한 멤버를 사용 가능
+@RequiredArgsConstructor
 public class MemberController {
-
-    // 생성자 주입
     private final MemberService memberService;
 
     // 회원가입 페이지 출력 요청
@@ -25,8 +24,6 @@ public class MemberController {
         System.out.println("MemberController.save");
         System.out.println("memberDTO = " + memberDTO);
         memberService.save(memberDTO);
-
         return "index";
     }
 }
-//MemberController.class
