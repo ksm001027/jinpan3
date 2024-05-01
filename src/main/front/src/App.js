@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css'; // 스타일 파일 임포트
 import Responses from './Responses';
 import FileUploader from './FileUploader';
 import FileList from './FileList';
 import ResponseForm from './ResponseForm';
 import QR from './QR';
+import axios from "axios";
 
 function App() {
-    const handleFileUploadSuccess = () => {
-        // 파일 업로드가 성공적으로 완료되었을 때 필요한 동작
-    };
+    useEffect(() => {
+        // 서버에서 렌더링된 HTML 문서에서 CSRF 토큰을 가져오는 로직
+        const csrfTokenMeta = document.querySelector("meta[name='_csrf']");
+
+        // CSRF 토큰이 존재하는지 확인 후 요청 헤더에 추가
+        if (csrfTokenMeta) {
+            axios.defaults.headers.common["X-XSRF-TOKEN"] = csrfTokenMeta.content;
+        }
+    }, []);
 
     return (
         <div className="container">

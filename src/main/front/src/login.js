@@ -1,37 +1,77 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axiosInstance from "../../api/axiosInstance";
 
-function LoginForm() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const SignInView = () => {
+    const [loginInput, setLoginInput] = useState({
+        userId: "",
+        password: "",
+    });
 
-    const handleLogin = async (event) => {
-        event.preventDefault();
+    const handleInputChange = (e) => {
+        setLoginInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const onLogin = async (e) => {
+        e.preventDefault();
+
         try {
-            const response = await axios.post('http://localhost:8080/member/login', {
-                email: email,
-                password: password
+            const res = await axiosInstance.post(`/com/login`, {
+                userId: loginInput.userId,
+                password: loginInput.password,
             });
-            console.log('로그인 성공:', response.data);
-            // 로그인 성공 시, 토큰 저장, 홈페이지나 대시보드로 리다이렉트 등의 조치
+            if (res.status === 200) {
+                console.log(res.data);
+            }
         } catch (error) {
-            console.error('로그인 실패:', error.response.data);
+            console.log(error);
         }
     };
 
     return (
-        <form onSubmit={handleLogin}>
-            <label>
-                이메일: <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            </label>
-            <br />
-            <label>
-                비밀번호: <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-            </label>
-            <br />
-            <button type="submit">로그인</button>
-        </form>
+        <>
+            <h2>로그인</h2>
+            <form>
+                <div>
+                    <label
+                        htmlFor="userId"
+                    >
+                        아이디
+                    </label>
+                    <input
+                        type="userId"
+                        id="userId"
+                        name="userId"
+                        value={loginInput.userId}
+                        onChange={handleInputChange}
+                        placeholder="아이디"
+                        required
+                    />
+                </div>
+                <div>
+                    <label
+                        htmlFor="password"
+                    >
+                        비밀번호
+                    </label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={loginInput.password}
+                        onChange={handleInputChange}
+                        placeholder="비밀번호"
+                        required
+                    />
+                </div>
+                <button
+                    type="submit"
+                    onClick={onLogin}
+                >
+                    로그인
+                </button>
+            </form>
+        </>
     );
-}
+};
 
-export default LoginForm;
+export default SignInView;
