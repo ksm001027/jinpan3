@@ -40,8 +40,6 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-<<<<<<< HEAD
-=======
 def reactAppDir = "$projectDir/src/main/front"
 
 sourceSets {
@@ -86,4 +84,3 @@ task copyReactFile(type: Copy) {
     from "$reactAppDir/build"
     into "$buildDir/resources/main/static"
 }
->>>>>>> d4ea5b7730c63bb19d28e49ecebd5ce67b0ce83b

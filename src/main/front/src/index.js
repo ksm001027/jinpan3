@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <AppRouter />  // 수정된 부분
+        <AppRouter />
     </React.StrictMode>
 );
 
