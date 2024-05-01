@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import App from './App';
 import LoginForm from './login';
 
@@ -12,14 +12,10 @@ function AppRouter() {
 
     return (
         <Router>
-            <Switch>
-                <Route path="/" exact>
-                    {isLoggedIn ? <Redirect to="/app" /> : <LoginForm onLogin={handleLoginSuccess} />}
-                </Route>
-                <Route path="/app" exact>
-                    {isLoggedIn ? <App /> : <Redirect to="/" />}
-                </Route>
-            </Switch>
+            <Routes>
+                <Route path="/" element={isLoggedIn ? <Navigate to="/app" /> : <LoginForm onLogin={handleLoginSuccess} />} />
+                <Route path="/app" element={isLoggedIn ? <App /> : <Navigate to="/" />} />
+            </Routes>
         </Router>
     );
 }
