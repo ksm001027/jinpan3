@@ -5,7 +5,7 @@ import FileUploader from './FileUploader';
 import FileList from './FileList';
 import ResponseForm from './ResponseForm';
 import QR from './QR';
-
+import save from './Save';
 function App() {
     const handleFileUploadSuccess = () => {
         // 파일 업로드가 성공적으로 완료되었을 때 필요한 동작
