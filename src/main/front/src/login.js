@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; // useState를 import해야 합니다.
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate(); // navigate 함수를 초기화합니다.
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -12,8 +14,12 @@ function LoginForm() {
                 email: email,
                 password: password
             });
-            console.log('로그인 성공:', response.data);
-            // 로그인 성공 시, 토큰 저장, 홈페이지나 대시보드로 리다이렉트 등의 조치
+            if (response && response.data) {
+                console.log('로그인 성공:', response.data);
+                navigate('/dashboard'); // navigate 함수를 사용하여 이동합니다.
+            } else {
+                console.error('로그인 실패: 응답 데이터가 없습니다.');
+            }
         } catch (error) {
             console.error('로그인 실패:', error.response.data);
         }
